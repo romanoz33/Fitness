@@ -1,0 +1,344 @@
+/*_____________ Подключение шрифтов _____________*/
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/Oswald/static/Oswald-ExtraLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/Oswald/static/Oswald-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/Oswald/static/Oswald-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Play";
+  src: url("../fonts/Play/Play-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Play";
+  src: url("../fonts/Play/Play-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+/*_____________ Объявление переменных _____________*/
+:root {
+  /* Fonts */
+  --font-base: "Play", sans-serif;
+  --font-header: "Oswald", sans-serif;
+
+  /* Colors Text */
+  --color-text: #243238;
+  --color-header: #000;
+
+  /* Colors Backgrounds */
+  --bg-base: #fff;
+  --bg-alt: #f5f8fa;
+
+  /* Accent Colors */
+  --accent-base: rgba(36, 194, 216, 0.8);
+  --accent-base-hover: rgba(36, 194, 216, 1);
+  --accent-base-shadow: rgb(44, 136, 148);
+
+  /* Other Colors */
+  --color-nav: #646464;
+  --color-disabled: rgb(185, 185, 185);
+  --step: 6px;
+}
+
+/*_____________ Скролл бар _____________*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::-webkit-input-placeholder {
+  color: rgba(225, 225, 225, 0.85);
+}
+
+/*_____________ Индивидуальные настройки _____________*/
+.wrapper {
+  padding: 25px 0 50px 0;
+}
+.h1,
+h1 {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: normal;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+.h2,
+h2 {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: normal;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+.h3,
+h3 {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: normal;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+.h4,
+h4 {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+@media screen and (max-width: 980px) {
+  .wrapper {
+    /* padding: 80px 0 160px 0; */
+  }
+}
+@media screen and (max-width: 736px) {
+  .wrapper {
+    /* padding: 60px 0 120px 0; */
+  }
+  .h1,
+  h1 {
+    font-size: clac(42px - 6px);
+  }
+  .h2,
+  h2 {
+    font-size: clac(36px - 6px);
+  }
+  .h3,
+  h3 {
+    font-size: clac(24px - 6px);
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    /* padding: 40px 0 80px 0; */
+  }
+  .h1,
+  h1 {
+    font-size: clac(42px - 8px);
+  }
+  .h2,
+  h2 {
+    font-size: clac(36px - 8px);
+  }
+  .h3,
+  h3 {
+    font-size: clac(24px - 8px);
+  }
+}
+
+a,
+p,
+span,
+button,
+input {
+  margin-bottom: 24px;
+}
+a,
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+/* i {
+  font-size: 1.3rem;
+} */
+img {
+  display: inline-block;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+ol.no_list,
+ul.no_list {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+/*_______________________________________________________*/
+
+body {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  height: 100%;
+  min-width: 320px;
+  color: var(--color-text);
+  background-color: var(--bg-base);
+}
+@media screen and (max-width: 736px) {
+  body {
+    /* font-size: 16px; */
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+.btn {
+  color: #fff;
+  background-color: var(--accent-base);
+  display: inline-block;
+  padding: 12px 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 1px 0px var(--accent-base-shadow);
+  text-transform: uppercase;
+  transition: all 300ms ease-in;
+}
+.btn:hover {
+  background-color: var(--accent-base-hover);
+  color: #fff;
+  outline: none;
+}
+.btn:focus {
+  outline: none;
+}
+.btn.disabled {
+  background-color: var(--color-disabled);
+  box-shadow: 0 3px 1px 0px rgb(133, 133, 133);
+}
+
+.nav-prev {
+  opacity: 0.8;
+}
+.nav-prev:hover {
+  opacity: 1;
+}
+.nav-prev > img {
+  width: 30px;
+}
+.nav-prev > span {
+  padding-left: 6px;
+}
+
+.exercise-header {
+  margin: 50px 0 75px 0;
+}
+.exercise-header > h1 {
+  margin-bottom: 0;
+}
+.exercise-header > .tags > .tag {
+  border: 1px solid var(--color-nav);
+  padding: 3px 12px;
+  border-radius: 5px;
+  color: var(--color-nav);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 300ms ease-in;
+}
+.exercise-header > .tags > .tag:hover {
+  opacity: 1;
+  /* color: #fff;
+  background-color: var(--accent-base);
+  border-color: var(--accent-base); */
+}
+
+.exercise-body {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.exercise-body > .left {
+  width: 35%;
+}
+.exercise-body > .right {
+  width: 65%;
+}
+
+/* .tasks {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.tasks > .task {
+  width: 30%;
+  text-align: center;
+}
+.tasks > .task.big {
+  width: 40%;
+}
+
+.tasks > .task svg .base-circle {
+  fill: none;
+  stroke: var(--accent-base);
+  stroke-width: 10px;
+}
+.tasks > .task svg .progress-circle {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 12px;
+  stroke-dashoffset: 0;
+  transition: all 500ms ease;
+}
+.tasks > .task svg .task-counter {
+  font-size: 48px;
+} */
+
+.tasks {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.tasks > .task {
+  margin: 0 30px;
+}
+
+.js-circle-progress-time .circle-progress {
+  width: 150px;
+  height: 150px;
+  font-size: 16px;
+}
+.circle-progress-value {
+  stroke-width: 2px;
+  stroke: #00bcd4;
+}
+.circle-progress-circle {
+  stroke-width: 3px;
+  stroke: #f2f2f2;
+}
+.circle-progress-text {
+  fill: #00bcd4;
+}
+
+.information {
+  text-align: center;
+  margin: 50px 0 20px 0;
+  font-size: 14px;
+}
+.done {
+  margin: 0 auto;
+  display: block;
+}
